@@ -1,0 +1,16 @@
+<form [formGroup]="myForm">
+	<select name="Price" formControlName="filterProduct">
+    <option *ngFor="let k of PriceFilter; let i = index;"
+      [ngValue]="getValue(i)">
+      {{ getValue(i).displayText }}
+    </option>
+  </select>
+</form>
+
+<div>
+  <ul>
+    <li *ngFor= "let product of filteredProducts">
+      {{ product | json }}
+    </li>
+  </ul>
+</div>
